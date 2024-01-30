@@ -2,6 +2,7 @@
   "affected": {
     "defaultBase": "origin/main"
   },
+  "bustCache": 1,
   "namedInputs": {
     "default": ["sharedGlobals", "{projectRoot}/**/*"],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"],
