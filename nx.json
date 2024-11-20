@@ -58,5 +58,6 @@
   "useInferencePlugins": false,
   "defaultBase": "main",
   "nxCloudUrl": "https://staging.nx.app",
-  "nxCloudId": "673d4f6b1cd002357f698afc"
+  "nxCloudId": "673d4f6b1cd002357f698afc",
+  "bustCache": 1
 }
