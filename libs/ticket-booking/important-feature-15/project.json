@@ -6,12 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/ticket-booking/important-feature-15/**/*.{ts,tsx,js,jsx}"
-        ]
-      },
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },
     "test": {
@@ -20,8 +15,7 @@
         "{workspaceRoot}/coverage/libs/ticket-booking/important-feature-15"
       ],
       "options": {
-        "jestConfig": "libs/ticket-booking/important-feature-15/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/ticket-booking/important-feature-15/jest.config.ts"
       }
     }
   }

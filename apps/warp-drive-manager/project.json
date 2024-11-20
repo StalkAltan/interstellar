@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@nx/next:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/warp-drive-manager",
         "buildLibsFromSource": false
@@ -47,24 +45,14 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/warp-drive-manager"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/warp-drive-manager"],
       "options": {
-        "jestConfig": "apps/warp-drive-manager/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/warp-drive-manager/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/warp-drive-manager/**/*.{ts,tsx,js,jsx}"
-        ]
-      },
-      "outputs": [
-        "{options.outputFile}"
-      ]
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   },
   "tags": []

@@ -6,12 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/warp-drive-manager/important-feature-16/**/*.{ts,tsx,js,jsx}"
-        ]
-      },
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },
     "test": {
@@ -20,8 +15,7 @@
         "{workspaceRoot}/coverage/libs/warp-drive-manager/important-feature-16"
       ],
       "options": {
-        "jestConfig": "libs/warp-drive-manager/important-feature-16/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/warp-drive-manager/important-feature-16/jest.config.ts"
       }
     }
   }

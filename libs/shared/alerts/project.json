@@ -22,23 +22,18 @@
             "output": "."
           }
         ],
-        "babelUpwardRootMode": true,
-        "updateBuildableProjectDepsInPackageJson": true
+        "babelUpwardRootMode": true
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": ["libs/shared/alerts/**/*.{ts,tsx,js,jsx}"]
-      },
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/shared/alerts"],
       "options": {
-        "jestConfig": "libs/shared/alerts/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/shared/alerts/jest.config.ts"
       }
     }
   }
