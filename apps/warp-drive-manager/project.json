@@ -1,5 +1,5 @@
 {
-  "root": "apps/warp-drive-manager",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/warp-drive-manager",
   "projectType": "application",
   "targets": {
@@ -12,8 +12,12 @@
         "buildLibsFromSource": false
       },
       "configurations": {
-        "production": {}
-      }
+        "production": {},
+        "development": {
+          "outputPath": "apps/warp-drive-manager"
+        }
+      },
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@nrwl/next:server",
@@ -25,8 +29,13 @@
         "production": {
           "buildTarget": "warp-drive-manager:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "warp-drive-manager:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +47,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/warp-drive-manager"],
       "options": {
-        "jestConfig": "apps/warp-drive-manager/jest.config.js",
+        "jestConfig": "apps/warp-drive-manager/jest.config.ts",
         "passWithNoTests": true
       }
     },

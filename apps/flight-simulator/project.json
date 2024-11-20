@@ -1,5 +1,5 @@
 {
-  "root": "apps/flight-simulator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/flight-simulator",
   "projectType": "application",
   "targets": {
@@ -12,8 +12,12 @@
         "buildLibsFromSource": false
       },
       "configurations": {
-        "production": {}
-      }
+        "production": {},
+        "development": {
+          "outputPath": "apps/flight-simulator"
+        }
+      },
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@nrwl/next:server",
@@ -25,8 +29,13 @@
         "production": {
           "buildTarget": "flight-simulator:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "flight-simulator:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +47,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/flight-simulator"],
       "options": {
-        "jestConfig": "apps/flight-simulator/jest.config.js",
+        "jestConfig": "apps/flight-simulator/jest.config.ts",
         "passWithNoTests": true
       }
     },

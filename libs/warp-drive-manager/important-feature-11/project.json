@@ -1,5 +1,5 @@
 {
-  "root": "libs/warp-drive-manager/important-feature-11",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/warp-drive-manager/important-feature-11/src",
   "projectType": "library",
   "tags": [],
@@ -17,7 +17,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/warp-drive-manager/important-feature-11"],
       "options": {
-        "jestConfig": "libs/warp-drive-manager/important-feature-11/jest.config.js",
+        "jestConfig": "libs/warp-drive-manager/important-feature-11/jest.config.ts",
         "passWithNoTests": true
       }
     }

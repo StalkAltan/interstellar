@@ -1,5 +1,5 @@
 {
-  "root": "libs/crew/important-feature-2",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/crew/important-feature-2/src",
   "projectType": "library",
   "tags": [],
@@ -17,7 +17,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/crew/important-feature-2"],
       "options": {
-        "jestConfig": "libs/crew/important-feature-2/jest.config.js",
+        "jestConfig": "libs/crew/important-feature-2/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -1,5 +1,5 @@
 {
-  "root": "apps/ticket-booking",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/ticket-booking",
   "projectType": "application",
   "targets": {
@@ -12,8 +12,12 @@
         "buildLibsFromSource": false
       },
       "configurations": {
-        "production": {}
-      }
+        "production": {},
+        "development": {
+          "outputPath": "apps/ticket-booking"
+        }
+      },
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@nrwl/next:server",
@@ -25,8 +29,13 @@
         "production": {
           "buildTarget": "ticket-booking:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "ticket-booking:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +47,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/ticket-booking"],
       "options": {
-        "jestConfig": "apps/ticket-booking/jest.config.js",
+        "jestConfig": "apps/ticket-booking/jest.config.ts",
         "passWithNoTests": true
       }
     },
