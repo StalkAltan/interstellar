@@ -1,4 +1,5 @@
 {
+  "name": "ticket-booking-important-feature-19",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ticket-booking/important-feature-19/src",
   "projectType": "library",
@@ -15,7 +16,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ticket-booking/important-feature-19"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/ticket-booking/important-feature-19"
+      ],
       "options": {
         "jestConfig": "libs/ticket-booking/important-feature-19/jest.config.ts",
         "passWithNoTests": true

@@ -1,4 +1,5 @@
 {
+  "name": "navigation-important-feature-18",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/navigation/important-feature-18/src",
   "projectType": "library",
@@ -15,7 +16,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/navigation/important-feature-18"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/navigation/important-feature-18"
+      ],
       "options": {
         "jestConfig": "libs/navigation/important-feature-18/jest.config.ts",
         "passWithNoTests": true

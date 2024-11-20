@@ -1,4 +1,5 @@
 {
+  "name": "navigation",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/navigation",
   "projectType": "application",
@@ -45,7 +46,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/navigation"],
+      "outputs": ["{workspaceRoot}/coverage/apps/navigation"],
       "options": {
         "jestConfig": "apps/navigation/jest.config.ts",
         "passWithNoTests": true

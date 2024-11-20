@@ -1,22 +1,19 @@
 {
+  "name": "shared-icons",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/icons/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/shared/icons",
         "tsConfig": "libs/shared/icons/tsconfig.lib.json",
         "project": "libs/shared/icons/package.json",
         "entryFile": "libs/shared/icons/src/index.ts",
-        "external": [
-          "react/jsx-runtime"
-        ],
+        "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "assets": [
           {
@@ -30,19 +27,13 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/shared/icons/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["libs/shared/icons/**/*.{ts,tsx,js,jsx}"]
       },
-      "outputs": [
-        "{options.outputFile}"
-      ]
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/libs/shared/icons"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/icons"],
       "options": {
         "jestConfig": "libs/shared/icons/jest.config.ts",
         "passWithNoTests": true

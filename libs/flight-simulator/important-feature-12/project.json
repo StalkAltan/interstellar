@@ -1,4 +1,5 @@
 {
+  "name": "flight-simulator-important-feature-12",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/flight-simulator/important-feature-12/src",
   "projectType": "library",
@@ -15,7 +16,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/flight-simulator/important-feature-12"],
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/flight-simulator/important-feature-12"
+      ],
       "options": {
         "jestConfig": "libs/flight-simulator/important-feature-12/jest.config.ts",
         "passWithNoTests": true

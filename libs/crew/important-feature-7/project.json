@@ -1,4 +1,5 @@
 {
+  "name": "crew-important-feature-7",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/crew/important-feature-7/src",
   "projectType": "library",
@@ -15,7 +16,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/crew/important-feature-7"],
+      "outputs": ["{workspaceRoot}/coverage/libs/crew/important-feature-7"],
       "options": {
         "jestConfig": "libs/crew/important-feature-7/jest.config.ts",
         "passWithNoTests": true

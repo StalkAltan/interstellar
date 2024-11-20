@@ -1,4 +1,5 @@
 {
+  "name": "ticket-booking",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/ticket-booking",
   "projectType": "application",
@@ -45,7 +46,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/ticket-booking"],
+      "outputs": ["{workspaceRoot}/coverage/apps/ticket-booking"],
       "options": {
         "jestConfig": "apps/ticket-booking/jest.config.ts",
         "passWithNoTests": true
