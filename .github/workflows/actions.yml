@@ -59,7 +59,7 @@ jobs:
         uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: '20'
       - run: npx nx-cloud start-ci-run --stop-agents-after=build,test,lint --require-explicit-completion
       - run: npm install
       - name: Run verification
@@ -87,7 +87,7 @@ jobs:
           echo "HEAD: ${{ env.NX_HEAD }}"
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: '20'
       - run: npm install
       - name: Run verification
         uses: JamesHenry/parallel-bash-commands@v0.1
