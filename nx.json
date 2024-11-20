@@ -55,7 +55,8 @@
     ]
   },
   "useDaemonProcess": false,
-  "nxCloudAccessToken": "ZTQ2NzFkMTgtNmI3MS00NzE2LWI5MmItNzRmMGFiMDUyMzRhfHJlYWQtd3JpdGU=",
   "useInferencePlugins": false,
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "nxCloudUrl": "https://staging.nx.app",
+  "nxCloudId": "673d4f6b1cd002357f698afc"
 }
