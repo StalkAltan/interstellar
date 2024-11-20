@@ -60,6 +60,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
+      - run: npx nx-cloud start-ci-run --stop-agents-after=build,test,lint --require-explicit-completion
       - run: npm install
       - name: Run verification
         uses: JamesHenry/parallel-bash-commands@v0.1
