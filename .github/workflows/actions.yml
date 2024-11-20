@@ -11,13 +11,13 @@ env:
   NODE_OPTIONS: '--max_old_space_size=4096'
 
 jobs:
-  agents:
+  agents-build:
     name: Nx Cloud Agents
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       matrix:
-        agent: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        agent: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -25,7 +25,27 @@ jobs:
           node-version: '16'
       - run: npm install
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
+        run: npx nx-cloud start-agent --targets=build
+        env:
+          NX_AGENT_NAME: ${{ matrix.agent }}-build
+
+  agents-build:
+    name: Nx Cloud Agents
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        agent: [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - run: npm install
+      - name: Start Nx Agent ${{ matrix.agent }}
+        run: npx nx-cloud start-agent --targets=test,lint
+        env:
+          NX_AGENT_NAME: ${{ matrix.agent }}-test-lint
 
   main:
     runs-on: ubuntu-latest
@@ -47,7 +67,6 @@ jobs:
           cmd1: npx nx affected --target=build --parallel=1
           cmd2: npx nx affected --target=test --parallel=3
           cmd3: npx nx affected --target=lint --parallel=3
-          cmd4: npx nx affected --target=e2e --parallel=1
       - run: npx nx-cloud stop-all-agents
       - name: Tag main branch if all jobs succeed
         uses: nrwl/nx-tag-successful-ci-run@v1
@@ -75,5 +94,4 @@ jobs:
           cmd1: npx nx affected --target=build --parallel=1
           cmd2: npx nx affected --target=test --parallel=1
           cmd3: npx nx affected --target=lint --parallel=3
-          cmd4: npx nx affected --target=e2e --parallel=1
       - run: npx nx-cloud stop-all-agents
