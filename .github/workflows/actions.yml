@@ -35,7 +35,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        agent: [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+        agent: [ 11, 12, 13, 14, 15, 16, 17, 18 ]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
