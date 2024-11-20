@@ -1,7 +1,4 @@
 {
-  "affected": {
-    "defaultBase": "main"
-  },
   "generators": {
     "@nx/react": {
       "application": {
@@ -58,5 +55,7 @@
     ]
   },
   "useDaemonProcess": false,
-  "nxCloudAccessToken": "ZTQ2NzFkMTgtNmI3MS00NzE2LWI5MmItNzRmMGFiMDUyMzRhfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ZTQ2NzFkMTgtNmI3MS00NzE2LWI5MmItNzRmMGFiMDUyMzRhfHJlYWQtd3JpdGU=",
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }
