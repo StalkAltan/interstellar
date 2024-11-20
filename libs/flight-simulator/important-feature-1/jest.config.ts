@@ -3,7 +3,7 @@ export default {
   displayName: 'flight-simulator-important-feature-1',
   preset: '../../../jest.preset.js',
   transform: {
-    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }],
+    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/react/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory:

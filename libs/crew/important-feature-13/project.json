@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "libs/crew/important-feature-13/**/*.{ts,tsx,js,jsx}"
@@ -15,7 +15,7 @@
       "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/crew/important-feature-13"],
       "options": {
         "jestConfig": "libs/crew/important-feature-13/jest.config.ts",
